@@ -12,15 +12,21 @@
     <!-- daisyUI CDN Link -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+
 
 </head>
 
-<body>
+<body class="bg-stone-100">
     <header>
         <div class="navbar bg-gray-200 w-10/12 mx-auto rounded-lg">
             <div class="flex-1">
-                <a class="btn btn-ghost normal-case text-2xl font-mono text-bold italic text-amber-700">Shopping~With>><span
-                        class="text-green-800">JS</span></a>
+                <a style="font-family: 'Monoton', cursive;"
+                    class=" btn btn-ghost normal-case text-2xl font-mono text-bold italic text-amber-700">Shopping~With>>
+                    <span class="text-green-800">JS</span></a>
             </div>
             <div class="flex-none">
                 <a class="btn btn-ghost normal-case text-xl font-mono text-bold  text-stone-700">Home</a>
@@ -63,10 +69,11 @@
         </div>
     </header>
 
-    <main>
+    <main class="font-serif">
         <section class="w-10/12 mx-auto my-10">
-            <div class="grid grid-cols-2 gap-4">
+            <div class="grid grid-cols-2 gap-6">
                 <div class="grid grid-cols-2 gap-6">
+                    <!-- Product-1 -->
                     <div>
                         <div class="card card-compact w-full bg-gray-100 shadow-xl">
                             <figure><img class="w-full h-48" src="images/coffee.jpg" alt="" /></figure>
@@ -74,11 +81,12 @@
                                 <h2 class="card-title">Coffee JS</h2>
                                 <p>Price: $<span>99</span></p>
                                 <div class="card-actions justify-end">
-                                    <button class="btn btn-primary">Buy Now</button>
+                                    <button class="btn btn-primary" onclick="addToCart(this)">Buy Now</button>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- Product-2 -->
                     <div>
                         <div class="card card-compact w-full bg-gray-100 shadow-xl">
                             <figure><img class="w-full h-48" src="images/heart_js.jpg" alt="" /></figure>
@@ -86,11 +94,12 @@
                                 <h2 class="card-title">Heart JS</h2>
                                 <p>Price: $<span>199</span></p>
                                 <div class="card-actions justify-end">
-                                    <button class="btn btn-primary">Buy Now</button>
+                                    <button class="btn btn-primary" onclick="addToCart(this)">Buy Now</button>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- Product-3 -->
                     <div>
                         <div class="card card-compact w-full bg-gray-100 shadow-xl">
                             <figure><img class="w-full h-48" src="images/panda.png" alt="" /></figure>
@@ -98,11 +107,12 @@
                                 <h2 class="card-title">Panda JS</h2>
                                 <p>Price: $<span>149</span></p>
                                 <div class="card-actions justify-end">
-                                    <button class="btn btn-primary">Buy Now</button>
+                                    <button class="btn btn-primary" onclick="addToCart(this)">Buy Now</button>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- Product-4 -->
                     <div>
                         <div class="card card-compact w-full bg-gray-100 shadow-xl">
                             <figure><img class="w-full h-48" src="images/umbrella.png" alt="" /></figure>
@@ -110,11 +120,12 @@
                                 <h2 class="card-title">Umbrella JS</h2>
                                 <p>Price: $<span>79</span></p>
                                 <div class="card-actions justify-end">
-                                    <button class="btn btn-primary">Buy Now</button>
+                                    <button class="btn btn-primary" onclick="addToCart(this)">Buy Now</button>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- Product-5 -->
                     <div>
                         <div class="card card-compact w-full bg-gray-100 shadow-xl">
                             <figure><img class="w-full h-48" src="images/vue-js.jpg" alt="" /></figure>
@@ -122,14 +133,32 @@
                                 <h2 class="card-title">Vue JS</h2>
                                 <p>Price: $<span>599</span></p>
                                 <div class="card-actions justify-end">
-                                    <button class="btn btn-primary">Buy Now</button>
+                                    <button class="btn btn-primary" onclick="addToCart(this)">Buy Now</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- Table Section -->
                 <div>
+                    <h2 class="text-4xl text-semibold text-center text-stone-700">Products Added: <span
+                            class="text-4xl text-bold text-yellow-800" id="added-product">0</span></h2>
 
+                    <div class="overflow-x-auto mt-7">
+                        <table class="table table-zebra w-10/12 mx-auto">
+                            <!-- head -->
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Product Name</th>
+                                    <th>Product Price</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-body">
+
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </section>
